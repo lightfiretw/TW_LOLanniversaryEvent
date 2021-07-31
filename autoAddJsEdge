@@ -1,0 +1,2 @@
+var yourToken="這裡使用CTRL+V取代這串文字，雙引號要留下來，這是你機密資料，不要讓別人知道了，如果別人知道你就完蛋蛋了";
+fetch("https://raw.githubusercontent.com/lightfiretw/TW_LOLanniversaryEvent/main/ID_json").then(e=>e.json()).then(e=>e.id).then(e=>{e.forEach((e,n)=>{setTimeout(function(){console.log(n),fetch("https://bargain.lol.garena.tw/api/enter",{method:"POST",body:JSON.stringify({code:e,confirm:!0}),headers:{Token:yourToken,"Content-Type":"application/json"}})},1e6*n)})});
